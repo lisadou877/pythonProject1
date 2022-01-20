@@ -1,16 +1,17 @@
-# This is a sample Python script.
+#If the bill was $150.00, split between 5 people, with 12% tip.
+#Each person should pay (150.00 / 5) * 1.12 = 33.6
+#Round the result to 2 decimal places
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+print("welcome to the tip calculator!")
+bill = float(input("what was the total bill?$"))
+tip = int(input("how much tip would you like to give? 10, 12 or 15?"))
+people = int(input("how many people to split the bill?"))
 
+tip_as_percent = tip/ 100
+total_tip_amount = bill * tip_as_percent
+total_bill = bill + total_tip_amount
+bill_per_person = total_bill / people
+final_amount = round(bill_per_person, 2)
+# FAQ: How to round to 2 decimal places?
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(f"each person should pay: ${final_amount}")
